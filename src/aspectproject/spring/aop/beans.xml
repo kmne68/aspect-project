@@ -16,6 +16,8 @@
 
 	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="aspectproject.spring.aop"></context:component-scan>
-	<context:component-scan base-package="aspectproject.spring.camera.accessories"></context:component-scan>
+
+	<context:component-scan base-package="aspectproject.spring.camera.accessories">
+	</context:component-scan>
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>

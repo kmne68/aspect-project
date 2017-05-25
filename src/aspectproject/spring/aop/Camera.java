@@ -7,8 +7,10 @@ public class Camera {
 	
 	int photoCount = 0;
 
-	public void snap() {
+	public void snap() throws Exception {
 		System.out.println("Snap!");
+		
+		throw new Exception("Cya");
 	}
 	
 	

@@ -13,12 +13,17 @@ public class App {
 		Camera camera = (Camera) context.getBean("camera");
 		Lens lens = (Lens) context.getBean("lens");
 		
-		camera.snap();
-		camera.snap(1000);
+		try {
+			camera.snap();
+		}
+		catch (Exception e) {
+			System.out.println("Caught an exception. " + e.getMessage());
+		}
+	/*	camera.snap(1000);
 		camera.snap("Acropolis");
-		camera.snapNighttime();
+		camera.snapNighttime();		
 		
-		lens.zoom(5);
+		lens.zoom(5);		*/
 		
 		context.close();
 	}
