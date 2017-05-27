@@ -1,0 +1,13 @@
+package aspectproject.spring.aop;
+
+public interface ICamera {
+
+	void snap() throws Exception;
+
+	void snap(int exposure);
+
+	String snap(String name);
+
+	void snapNighttime();
+
+}

@@ -44,28 +44,28 @@ public class Logger {
 		System.out.println("[Before advice] About to take photo...");
 	}
 	
-	
+	/*
 	@After("cameraSnap()")
 	public void afterAdvice() {
 		
 		System.out.println("[After advice] Just took a photo...");
-	}
+	} */
 	
-	
+	/*
 	@AfterReturning("cameraSnap()")
 	public void afterReturningAdvice() {
 		
 		System.out.println("[After returning advice] Just took a photo...");
-	}
+	} */
 	
-	
+	/*
 	@AfterThrowing("cameraSnap()")
 	public void afterThrowingAdvice() {
 		
 		System.out.println("[After throwing an exception advice] Just took a photo...");
-	}
+	} */
 	
-	
+	/*
 	@Around("cameraSnap()")
 	public void aroundAdvice(ProceedingJoinPoint joinPoint) {
 		
@@ -79,7 +79,7 @@ public class Logger {
 		}
 		
 		System.out.println("Around advice (after)");
-	}	
+	} */	
 	
 /*	
 	@Before("cameraSnapName()")

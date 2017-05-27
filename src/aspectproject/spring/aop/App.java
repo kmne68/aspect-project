@@ -2,7 +2,7 @@ package aspectproject.spring.aop;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import aspectproject.spring.camera.accessories.Lens;
+// import aspectproject.spring.camera.accessories.Lens;
 
 public class App {
 
@@ -10,8 +10,12 @@ public class App {
 		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aspectproject/spring/aop/beans.xml");
 
-		Camera camera = (Camera) context.getBean("camera");
-		Lens lens = (Lens) context.getBean("lens");
+		Object object = context.getBean("camera");
+		System.out.println("Class of camera bean: " + object.getClass());
+		System.out.println(object instanceof Camera);
+				
+		ICamera camera = (ICamera) context.getBean("camera");
+//		Lens lens = (Lens) context.getBean("lens");
 		
 		try {
 			camera.snap();
