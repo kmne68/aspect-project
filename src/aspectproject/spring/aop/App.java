@@ -17,17 +17,29 @@ public class App {
 		ICamera camera = (ICamera) context.getBean("camera");
 //		Lens lens = (Lens) context.getBean("lens");
 		
+
+//		camera.snap(500);
+//		camera.snapNighttime();
+		
 		try {
 			camera.snap();
 		}
 		catch (Exception e) {
 			System.out.println("Caught an exception. " + e.getMessage());
 		}
-	/*	camera.snap(1000);
+		
+
+		camera.snap(500);
+		camera.snapNighttime();
+		
+/*		camera.snap(1000);
 		camera.snap("Acropolis");
 		camera.snapNighttime();		
+*/		
+	//	lens.zoom(5);	
 		
-		lens.zoom(5);		*/
+		GoPro goPro = new GoPro();
+		goPro.capture();
 		
 		context.close();
 	}

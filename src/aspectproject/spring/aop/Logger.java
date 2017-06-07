@@ -18,7 +18,7 @@ public class Logger {
 	// create a dummy method to enable reusable pointcut
 	// double dots in parameter list are wildcards telling making this pointcut work for any snap() method
 	// asterisks are wildcards and in this case allow any return type and any Camera method
-	@Pointcut("execution(* aspectproject.spring.aop.Camera.*(..))")
+	@Pointcut("within(aspectproject.spring.aop.*)")
 	public void cameraSnap() {
 		
 	}
