@@ -38,7 +38,7 @@ public class App {
 */		
 	//	lens.zoom(5);	
 		
-		GoPro goPro = new GoPro();
+		GoPro goPro = (GoPro)context.getBean("goPro");
 		goPro.capture();
 		
 		context.close();

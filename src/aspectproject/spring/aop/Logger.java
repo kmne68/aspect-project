@@ -19,7 +19,7 @@ public class Logger {
 	// double dots in parameter list are wildcards telling making this pointcut work for any snap() method
 	// asterisks are wildcards and in this case allow any return type and any Camera method
 	@Pointcut("within(aspectproject.spring.aop.*)")
-	public void cameraSnap() {
+	public void withinDemo() {
 		
 	}
 	
@@ -38,11 +38,23 @@ public class Logger {
 	}
 */
 
-	@Before("cameraSnap()")
-	public void beforeAdvice() {
+	@Before("withinDemo()")
+	public void withinDemoAdvice() {
 		
 		System.out.println("[Before advice] About to take photo...");
 	}
+	
+	// "this" target is more specific than within or target
+	@Pointcut("this(aspectproject.spring.aop.ICamera)")
+	public void thisDemo() {
+		
+	}
+	
+	
+	@Before("thisDemo()")
+	public void thisDemoAdvice() {
+		System.out.println("******* This Demo *******");
+	}	
 	
 	/*
 	@After("cameraSnap()")
@@ -95,5 +107,19 @@ public class Logger {
 		System.out.println("Doing something related to cameras...");
 	}
 */
+
+	
+	
+	@Pointcut("target(aspectproject.spring.aop.ICamera)")
+	public void targetDemo() {		
+	}
+	
+	
+	@Before("targetDemo()")
+	public void targetDemoAdvice() {
+		System.out.println("******** Target Demo ********");
+	}
+	
+
 }
 
