@@ -18,10 +18,61 @@ public class Logger {
 	// create a dummy method to enable reusable pointcut
 	// double dots in parameter list are wildcards telling making this pointcut work for any snap() method
 	// asterisks are wildcards and in this case allow any return type and any Camera method
+	
+//	@Pointcut("within(aspectproject.spring.aop..*)")
+//	public void somePointcut() {
+//		
+//	}
+//	
+//	
+//	@Before("somePointcut()")
+//	public void somePointcutDemo() {
+//		System.out.println("*********** Before Demo ***********");
+//	}
+	
+	
+//	@Pointcut("target(org.springframework.stereotype.Component)")
+//	public void somePointcut() {
+//		
+//	}
+//	
+//	
+//	@Before("somePointcut()")
+//	public void somePointcutDemo() {
+//		System.out.println("*********** Before Demo ***********");
+//	}
+	
+	
+//	@Pointcut("@annotation(java.lang.Deprecated)")
+//	public void somePointcut() {
+//		
+//	}
+//	
+//	
+//	@Before("somePointcut()")
+//	public void somePointcutDemo() {
+//		System.out.println("*********** Before Demo ***********");
+//	}	
+	
+	
+	@Pointcut("@args(org.springframework.stereotype.Component)")
+	public void somePointcut() {
+		
+	}
+	
+	
+	@Before("somePointcut()")
+	public void somePointcutDemo() {
+		System.out.println("*********** Before Demo ***********");
+	}	
+	
+	
+/*
 	@Pointcut("within(aspectproject.spring.aop.*)")
 	public void withinDemo() {
 		
 	}
+*/
 	
 /*	
 	// use asterisk wildcard for return type
@@ -38,6 +89,7 @@ public class Logger {
 	}
 */
 
+/*
 	@Before("withinDemo()")
 	public void withinDemoAdvice() {
 		
@@ -55,6 +107,7 @@ public class Logger {
 	public void thisDemoAdvice() {
 		System.out.println("******* This Demo *******");
 	}	
+*/
 	
 	/*
 	@After("cameraSnap()")
@@ -108,8 +161,7 @@ public class Logger {
 	}
 */
 
-	
-	
+/*	
 	@Pointcut("target(aspectproject.spring.aop.ICamera)")
 	public void targetDemo() {		
 	}
@@ -119,6 +171,7 @@ public class Logger {
 	public void targetDemoAdvice() {
 		System.out.println("******** Target Demo ********");
 	}
+*/
 	
 
 }

@@ -24,6 +24,7 @@ public class Camera implements PhotoSnapper, Machine, ICamera {
 	 * @see aspectproject.spring.aop.ICamera#snap(int)
 	 */
 	@Override
+	@Deprecated
 	public void snap(int exposure) {
 		System.out.println("Snap! Exposure: " + exposure);
 	}
