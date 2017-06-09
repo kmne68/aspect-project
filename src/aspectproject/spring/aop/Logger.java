@@ -55,7 +55,19 @@ public class Logger {
 //	}	
 	
 	
-	@Pointcut("@args(org.springframework.stereotype.Component)")
+//	@Pointcut("@args(org.springframework.stereotype.Component)")
+//	public void somePointcut() {
+//		
+//	}
+//	
+//	
+//	@Before("somePointcut()")
+//	public void somePointcutDemo() {
+//		System.out.println("*********** Before Demo ***********");
+//	}	
+	
+	
+	@Pointcut("bean(*a*")
 	public void somePointcut() {
 		
 	}
@@ -65,7 +77,6 @@ public class Logger {
 	public void somePointcutDemo() {
 		System.out.println("*********** Before Demo ***********");
 	}	
-	
 	
 /*
 	@Pointcut("within(aspectproject.spring.aop.*)")
