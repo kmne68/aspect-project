@@ -9,5 +9,9 @@ public interface ICamera {
 	String snap(String name);
 
 	void snapNighttime();
+	
+	void snap(double exposure);
+	
+	public abstract void snap(int i, double d);
 
 }

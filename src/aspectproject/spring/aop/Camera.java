@@ -41,6 +41,15 @@ public class Camera implements PhotoSnapper, Machine, ICamera {
 		return name;
 	}
 	
+	public void snap(double aperture) {
+		System.out.println("Aperture is " + aperture);
+	}
+	
+	
+	public void snap(int speed, double aperture) {
+		System.out.println("Shutter and aperature are " + speed + " and " + aperture);
+	}
+	
 	
 	/* (non-Javadoc)
 	 * @see aspectproject.spring.aop.ICamera#snapNighttime()

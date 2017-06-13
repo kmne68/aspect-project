@@ -31,6 +31,9 @@ public class App {
 
 		camera.snap(500);
 		camera.snapNighttime();
+		camera.snap(1.8);
+		camera.snap(500, 1.8);
+		
 		
 /*		camera.snap(1000);
 		camera.snap("Acropolis");

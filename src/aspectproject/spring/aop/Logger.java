@@ -67,7 +67,9 @@ public class Logger {
 //	}	
 	
 	
-	@Pointcut("bean(*a*")
+//	@Pointcut("args(int, *)")	
+//	@Pointcut("args(int, double)")
+	@Pointcut("args(int, ..)")
 	public void somePointcut() {
 		
 	}
@@ -77,6 +79,19 @@ public class Logger {
 	public void somePointcutDemo() {
 		System.out.println("*********** Before Demo ***********");
 	}	
+	
+	
+/*	@Pointcut("bean(*a*")
+	public void somePointcut() {
+		
+	}
+	
+	
+	@Before("somePointcut()")
+	public void somePointcutDemo() {
+		System.out.println("*********** Before Demo ***********");
+	}	
+*/
 	
 /*
 	@Pointcut("within(aspectproject.spring.aop.*)")
