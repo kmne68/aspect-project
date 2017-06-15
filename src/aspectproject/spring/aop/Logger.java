@@ -1,5 +1,6 @@
 package aspectproject.spring.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -68,16 +69,23 @@ public class Logger {
 	
 	
 //	@Pointcut("args(int, *)")	
+//	@Pointcut("args(int, ..)")
 //	@Pointcut("args(int, double)")
-	@Pointcut("args(int, ..)")
+	
+	@Pointcut("target(aspectproject.spring.aop.Camera)")
 	public void somePointcut() {
 		
 	}
 	
 	
 	@Before("somePointcut()")
-	public void somePointcutDemo() {
+	public void somePointcutDemo(JoinPoint jp) {
 		System.out.println("*********** Before Demo ***********");
+		
+		for(Object object : jp.getArgs()) {
+			System.out.println("ARG: " + object);
+		}
+		
 	}	
 	
 	
