@@ -71,20 +71,20 @@ public class Logger {
 //	@Pointcut("args(int, *)")	
 //	@Pointcut("args(int, ..)")
 //	@Pointcut("args(int, double)")
+//	@Pointcut("target(aspectproject.spring.aop.Camera)")
 	
-	@Pointcut("target(aspectproject.spring.aop.Camera)")
-	public void somePointcut() {
+	@Pointcut("args(exposure, aperture)")
+	public void somePointcut(int exposure, double aperture) {
 		
 	}
 	
 	
-	@Before("somePointcut()")
-	public void somePointcutDemo(JoinPoint jp) {
+	@Before("somePointcut(exposure, aperture)")
+	public void somePointcutDemo(JoinPoint jp, int exposure, double aperture) {
 		System.out.println("*********** Before Demo ***********");
 		
-		for(Object object : jp.getArgs()) {
-			System.out.println("ARG: " + object);
-		}
+
+		System.out.printf("exposure %d, apertuer %.2f\n", exposure, aperture);
 		
 	}	
 	
