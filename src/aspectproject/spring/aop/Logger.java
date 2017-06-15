@@ -78,7 +78,7 @@ public class Logger {
 		
 	}
 	
-	
+	/*
 	@Before("somePointcut(exposure, aperture)")
 	public void somePointcutDemo(JoinPoint jp, int exposure, double aperture) {
 		System.out.println("*********** Before Demo ***********");
@@ -86,7 +86,29 @@ public class Logger {
 
 		System.out.printf("exposure %d, apertuer %.2f\n", exposure, aperture);
 		
-	}	
+	}	*/
+	
+	
+	@Pointcut("target(aspectproject.spring.aop.Camera)")
+	public void targetCamera() {
+		
+	}
+	
+	
+	@Before("targetCamera() && somePointcut(exposure, aperture)")
+	public void somePointcutDemo(int exposure, double aperture) {
+		System.out.println("***** Before Demo *****");
+		
+		System.out.printf("exposure %d, aperture %.2f\n", exposure, aperture);
+	}
+		
+	
+	@After("within(aspectproject.spring.aop.Camera)")
+	public void someAfterAdvice() {
+		
+		System.out.println("***** After advice running *****");
+	}
+			
 	
 	
 /*	@Pointcut("bean(*a*")
