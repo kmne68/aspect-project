@@ -10,6 +10,14 @@ public class App {
 		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aspectproject/spring/aop/beans.xml");
 
+		IBlender blender = (IBlender)context.getBean("blender");
+		blender.blend();
+		
+		IFan fan = (IFan)context.getBean("fan");
+		fan.activate(5);
+		
+		
+		
 		Object object = context.getBean("camera");
 		System.out.println("Class of camera bean: " + object.getClass());
 		System.out.println(object instanceof Camera);
@@ -45,6 +53,8 @@ public class App {
 		goPro.capture();
 		
 		context.close();
+
 	}
+
 
 }

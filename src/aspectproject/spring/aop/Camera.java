@@ -3,7 +3,7 @@ package aspectproject.spring.aop;
 import org.springframework.stereotype.Component;
 
 @Component ("camera")
-public class Camera implements PhotoSnapper, Machine, ICamera {
+public class Camera implements PhotoSnapper, ICamera {
 	
 	public Camera() {
 		System.out.println("Hello from camera constructor.");
